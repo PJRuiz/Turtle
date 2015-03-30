@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var emailTextField: UITextField?
     
@@ -40,7 +40,7 @@ class AuthViewController: UIViewController {
     {
         super.viewWillAppear(animated)
         
-        self.navigationController!.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     
@@ -53,7 +53,7 @@ class AuthViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController!.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
        override func didReceiveMemoryWarning() {
@@ -61,15 +61,24 @@ class AuthViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == self.emailTextField)
+        {
+            self.emailTextField?.resignFirstResponder()
+            self.passwordTextField?.becomeFirstResponder()
+        }
+        else if (textField == self.passwordTextField)
+        {
+            self.passwordTextField?.resignFirstResponder()
+            self.authenticate()
+        }
+        
+        return true
     }
-    */
+    
+    func authenticate()
+    {
+        println("authenticate!")
+    }
     
 }
