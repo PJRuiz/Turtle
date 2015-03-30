@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA14E1AC91D7000D64690 /* AppDelegate.swift */; };
-		956BA1511AC91D7000D64690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA1501AC91D7000D64690 /* ViewController.swift */; };
-		956BA1541AC91D7000D64690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1521AC91D7000D64690 /* Main.storyboard */; };
 		956BA1561AC91D7000D64690 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1551AC91D7000D64690 /* Images.xcassets */; };
 		956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1571AC91D7000D64690 /* LaunchScreen.xib */; };
 		956BA1651AC91D7000D64690 /* TurtleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA1641AC91D7000D64690 /* TurtleTests.swift */; };
+		956BA1701AC91EDE00D64690 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA16E1AC91EDE00D64690 /* Bolts.framework */; };
+		956BA1711AC91EDE00D64690 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA16F1AC91EDE00D64690 /* Parse.framework */; };
+		956BA1731AC91EF200D64690 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1721AC91EF200D64690 /* libz.dylib */; };
+		956BA1751AC91EFC00D64690 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1741AC91EFC00D64690 /* libsqlite3.dylib */; };
+		956BA1771AC91F0700D64690 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1761AC91F0700D64690 /* CoreLocation.framework */; };
+		956BA1791AC91F1000D64690 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1781AC91F1000D64690 /* CoreGraphics.framework */; };
+		956BA17B1AC91F1800D64690 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA17A1AC91F1800D64690 /* StoreKit.framework */; };
+		956BA17D1AC91F2200D64690 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA17C1AC91F2200D64690 /* Security.framework */; };
+		956BA17F1AC91F2B00D64690 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA17E1AC91F2B00D64690 /* QuartzCore.framework */; };
+		956BA1811AC91F3600D64690 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1801AC91F3600D64690 /* MobileCoreServices.framework */; };
+		956BA1831AC91F3F00D64690 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1821AC91F3F00D64690 /* CFNetwork.framework */; };
+		956BA1851AC91F4900D64690 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1841AC91F4800D64690 /* AudioToolbox.framework */; };
+		956BA1871AC91F5600D64690 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1861AC91F5600D64690 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +40,25 @@
 		956BA1491AC91D7000D64690 /* Turtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956BA14D1AC91D7000D64690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956BA14E1AC91D7000D64690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		956BA1501AC91D7000D64690 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		956BA1531AC91D7000D64690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		956BA1551AC91D7000D64690 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		956BA1581AC91D7000D64690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		956BA15E1AC91D7000D64690 /* TurtleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurtleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956BA1631AC91D7000D64690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956BA1641AC91D7000D64690 /* TurtleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleTests.swift; sourceTree = "<group>"; };
+		956BA16E1AC91EDE00D64690 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.7.0/Bolts.framework"; sourceTree = "<group>"; };
+		956BA16F1AC91EDE00D64690 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../parse-library-1.7.0/Parse.framework"; sourceTree = "<group>"; };
+		956BA1721AC91EF200D64690 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		956BA1741AC91EFC00D64690 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		956BA1761AC91F0700D64690 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		956BA1781AC91F1000D64690 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		956BA17A1AC91F1800D64690 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		956BA17C1AC91F2200D64690 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		956BA17E1AC91F2B00D64690 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		956BA1801AC91F3600D64690 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		956BA1821AC91F3F00D64690 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		956BA1841AC91F4800D64690 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		956BA1861AC91F5600D64690 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		956BA1891AC91FB100D64690 /* Turtle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Turtle-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +66,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956BA1871AC91F5600D64690 /* SystemConfiguration.framework in Frameworks */,
+				956BA1851AC91F4900D64690 /* AudioToolbox.framework in Frameworks */,
+				956BA1831AC91F3F00D64690 /* CFNetwork.framework in Frameworks */,
+				956BA1811AC91F3600D64690 /* MobileCoreServices.framework in Frameworks */,
+				956BA17F1AC91F2B00D64690 /* QuartzCore.framework in Frameworks */,
+				956BA17D1AC91F2200D64690 /* Security.framework in Frameworks */,
+				956BA17B1AC91F1800D64690 /* StoreKit.framework in Frameworks */,
+				956BA1791AC91F1000D64690 /* CoreGraphics.framework in Frameworks */,
+				956BA1771AC91F0700D64690 /* CoreLocation.framework in Frameworks */,
+				956BA1751AC91EFC00D64690 /* libsqlite3.dylib in Frameworks */,
+				956BA1731AC91EF200D64690 /* libz.dylib in Frameworks */,
+				956BA1701AC91EDE00D64690 /* Bolts.framework in Frameworks */,
+				956BA1711AC91EDE00D64690 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				956BA14B1AC91D7000D64690 /* Turtle */,
+				956BA1881AC91F6900D64690 /* Frameworks */,
 				956BA1611AC91D7000D64690 /* TurtleTests */,
 				956BA14A1AC91D7000D64690 /* Products */,
 			);
@@ -78,11 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				956BA14E1AC91D7000D64690 /* AppDelegate.swift */,
-				956BA1501AC91D7000D64690 /* ViewController.swift */,
-				956BA1521AC91D7000D64690 /* Main.storyboard */,
 				956BA1551AC91D7000D64690 /* Images.xcassets */,
 				956BA1571AC91D7000D64690 /* LaunchScreen.xib */,
 				956BA14C1AC91D7000D64690 /* Supporting Files */,
+				956BA1891AC91FB100D64690 /* Turtle-Bridging-Header.h */,
 			);
 			path = Turtle;
 			sourceTree = "<group>";
@@ -110,6 +146,26 @@
 				956BA1631AC91D7000D64690 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		956BA1881AC91F6900D64690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				956BA1861AC91F5600D64690 /* SystemConfiguration.framework */,
+				956BA1841AC91F4800D64690 /* AudioToolbox.framework */,
+				956BA1821AC91F3F00D64690 /* CFNetwork.framework */,
+				956BA1801AC91F3600D64690 /* MobileCoreServices.framework */,
+				956BA17E1AC91F2B00D64690 /* QuartzCore.framework */,
+				956BA17C1AC91F2200D64690 /* Security.framework */,
+				956BA17A1AC91F1800D64690 /* StoreKit.framework */,
+				956BA1781AC91F1000D64690 /* CoreGraphics.framework */,
+				956BA1761AC91F0700D64690 /* CoreLocation.framework */,
+				956BA1741AC91EFC00D64690 /* libsqlite3.dylib */,
+				956BA1721AC91EF200D64690 /* libz.dylib */,
+				956BA16E1AC91EDE00D64690 /* Bolts.framework */,
+				956BA16F1AC91EDE00D64690 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956BA1541AC91D7000D64690 /* Main.storyboard in Resources */,
 				956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */,
 				956BA1561AC91D7000D64690 /* Images.xcassets in Resources */,
 			);
@@ -212,7 +267,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956BA1511AC91D7000D64690 /* ViewController.swift in Sources */,
 				956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,14 +290,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		956BA1521AC91D7000D64690 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				956BA1531AC91D7000D64690 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		956BA1571AC91D7000D64690 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,9 +382,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pedroruiz/Desktop/Turtle/parse-library-1.7.0",
+				);
 				INFOPLIST_FILE = Turtle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Turtle/Turtle-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +399,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pedroruiz/Desktop/Turtle/parse-library-1.7.0",
+				);
 				INFOPLIST_FILE = Turtle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Turtle/Turtle-Bridging-Header.h";
 			};
 			name = Release;
 		};
