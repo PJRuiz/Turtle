@@ -24,6 +24,10 @@
 		956BA1831AC91F3F00D64690 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1821AC91F3F00D64690 /* CFNetwork.framework */; };
 		956BA1851AC91F4900D64690 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1841AC91F4800D64690 /* AudioToolbox.framework */; };
 		956BA1871AC91F5600D64690 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1861AC91F5600D64690 /* SystemConfiguration.framework */; };
+		956BA18E1AC9207300D64690 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA18C1AC9207300D64690 /* StartViewController.swift */; };
+		956BA18F1AC9207300D64690 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA18D1AC9207300D64690 /* StartViewController.xib */; };
+		956BA1921AC9218300D64690 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA1901AC9218300D64690 /* AuthViewController.swift */; };
+		956BA1931AC9218300D64690 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1911AC9218300D64690 /* AuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		956BA1841AC91F4800D64690 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		956BA1861AC91F5600D64690 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		956BA1891AC91FB100D64690 /* Turtle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Turtle-Bridging-Header.h"; sourceTree = "<group>"; };
+		956BA18C1AC9207300D64690 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		956BA18D1AC9207300D64690 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		956BA1901AC9218300D64690 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		956BA1911AC9218300D64690 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				956BA14E1AC91D7000D64690 /* AppDelegate.swift */,
+				956BA1941AC9241D00D64690 /* ViewControllers */,
 				956BA1551AC91D7000D64690 /* Images.xcassets */,
 				956BA1571AC91D7000D64690 /* LaunchScreen.xib */,
 				956BA14C1AC91D7000D64690 /* Supporting Files */,
@@ -166,6 +175,17 @@
 				956BA16F1AC91EDE00D64690 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		956BA1941AC9241D00D64690 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				956BA18C1AC9207300D64690 /* StartViewController.swift */,
+				956BA18D1AC9207300D64690 /* StartViewController.xib */,
+				956BA1901AC9218300D64690 /* AuthViewController.swift */,
+				956BA1911AC9218300D64690 /* AuthViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +268,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956BA1931AC9218300D64690 /* AuthViewController.xib in Resources */,
 				956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */,
 				956BA1561AC91D7000D64690 /* Images.xcassets in Resources */,
+				956BA18F1AC9207300D64690 /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */,
+				956BA1921AC9218300D64690 /* AuthViewController.swift in Sources */,
+				956BA18E1AC9207300D64690 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

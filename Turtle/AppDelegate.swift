@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.setupParse()
+        self.setupAppAppearance();
         
         // Setup a UI Window
         
@@ -57,6 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        var testObject = PFObject(className: "TestObject")
         //        testObject["foo"] = "bar"
         //        testObject.save()
+    }
+    
+    func setupAppAppearance()
+    {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "SelectedTabBackground")
     }
     
     func applicationWillResignActive(application: UIApplication) {
