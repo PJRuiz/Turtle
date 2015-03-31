@@ -37,12 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If there's a logged in user. then present the main UI
         if PFUser.currentUser() == nil
         {
+            // TODO: present UI for logging in or creating an account
+
             navigationController.viewControllers = [startViewController]
         }
         else
         {
-            // TODO: present UI for logging in or creating an account
-            println("we have a user!")
+            
+            //Create a New TabBar Controller
+            
+            var tabBarController = TabBarController()
+            // Load startViewController to keep it as a root to default to after signing out
+            
+            navigationController.viewControllers = [startViewController, tabBarController]
         }
         
         self.window!.rootViewController = navigationController
@@ -66,8 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.blackColor()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-//        UITabBar.appearance().barTintColor = UIColor.blackColor()
-//        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
 //        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "SelectedTabBackground")
     }
     
