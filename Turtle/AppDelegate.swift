@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UITabBar.appearance().barTintColor = UIColor.blackColor()
         UITabBar.appearance().tintColor = UIColor.whiteColor()
-//        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "SelectedTabBackground")
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "SelectedTabBackground")
     }
     
     func applicationWillResignActive(application: UIApplication) {

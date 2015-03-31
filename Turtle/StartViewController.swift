@@ -10,9 +10,16 @@ import UIKit
 
 class StartViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.navigationController?.navigationBarHidden = true
+//    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
