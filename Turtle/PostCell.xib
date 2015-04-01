@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.22190733000000001" green="1" blue="0.1107470892" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YV0-7u-qwz" firstAttribute="leading" secondItem="dOF-d2-1vh" secondAttribute="leading" constant="10" id="820-dr-BCF"/>
                             <constraint firstAttribute="centerY" secondItem="YV0-7u-qwz" secondAttribute="centerY" id="ATS-CA-3AF"/>
@@ -39,12 +39,12 @@
                             <constraint firstAttribute="height" constant="30" id="RiR-LY-Kej"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-2N-2jF">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PostPlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-2N-2jF">
                         <rect key="frame" x="10" y="40" width="300" height="300"/>
-                        <color key="backgroundColor" red="0.22190733000000001" green="1" blue="0.1107470892" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="8Nw-bg-R70"/>
-                            <constraint firstAttribute="width" constant="300" id="UnV-r2-cHs"/>
+                            <constraint firstAttribute="width" priority="750" constant="300" id="UnV-r2-cHs"/>
                             <constraint firstAttribute="width" constant="300" id="XoM-wO-fQ1"/>
                             <constraint firstAttribute="height" constant="300" id="qfN-sE-wL5"/>
                         </constraints>
@@ -82,6 +82,14 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="5ug-4c-k1p" id="yFN-fH-7um"/>
+                <outlet property="postImageView" destination="eeD-2N-2jF" id="XfF-ly-b6M"/>
+                <outlet property="usernameLabel" destination="YV0-7u-qwz" id="3Em-mq-RVN"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="PostPlaceholderImage" width="300" height="304"/>
+    </resources>
 </document>
