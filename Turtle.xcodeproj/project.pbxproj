@@ -11,6 +11,8 @@
 		95500FA91ACBC00500199B57 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FA81ACBC00500199B57 /* UIColor+Extensions.swift */; };
 		95500FAC1ACBF3FA00199B57 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */; };
 		95500FAD1ACBF3FA00199B57 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */; };
+		95500FB01ACC156200199B57 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FAE1ACC156200199B57 /* PersonCell.swift */; };
+		95500FB11ACC156200199B57 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95500FAF1ACC156200199B57 /* PersonCell.xib */; };
 		956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA14E1AC91D7000D64690 /* AppDelegate.swift */; };
 		956BA1561AC91D7000D64690 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1551AC91D7000D64690 /* Images.xcassets */; };
 		956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1571AC91D7000D64690 /* LaunchScreen.xib */; };
@@ -57,6 +59,8 @@
 		95500FA81ACBC00500199B57 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		95500FAE1ACC156200199B57 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		95500FAF1ACC156200199B57 /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
 		956BA1491AC91D7000D64690 /* Turtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956BA14D1AC91D7000D64690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956BA14E1AC91D7000D64690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,10 +217,12 @@
 				956BA1A21ACB894900D64690 /* FeedViewController.swift */,
 				956BA1A31ACB894900D64690 /* FeedViewController.xib */,
 				95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */,
-				956BA19A1ACA347B00D64690 /* TabBarController.swift */,
 				95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */,
+				956BA19A1ACA347B00D64690 /* TabBarController.swift */,
 				956BA1A61ACB8E9300D64690 /* PostCell.swift */,
 				956BA1A71ACB8E9300D64690 /* PostCell.xib */,
+				95500FAE1ACC156200199B57 /* PersonCell.swift */,
+				95500FAF1ACC156200199B57 /* PersonCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */,
 				956BA1561AC91D7000D64690 /* Images.xcassets in Resources */,
 				956BA18F1AC9207300D64690 /* StartViewController.xib in Resources */,
+				95500FB11ACC156200199B57 /* PersonCell.xib in Resources */,
 				95500FAD1ACBF3FA00199B57 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95500FA71ACBB5F600199B57 /* NSDate+Extensions.swift in Sources */,
+				95500FB01ACC156200199B57 /* PersonCell.swift in Sources */,
 				956BA1971AC97C1900D64690 /* String+Extensions.swift in Sources */,
 				956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */,
 				956BA1991ACA2AFD00D64690 /* UIViewController+Extensions.swift in Sources */,

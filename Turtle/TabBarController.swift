@@ -14,7 +14,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         var feedViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
-        //feedViewController.view.backgroundColor = UIColor.orangeColor()
         
         var cameraViewController = UIViewController()
         cameraViewController.view.backgroundColor = UIColor.purpleColor()
@@ -22,12 +21,9 @@ class TabBarController: UITabBarController {
         var profileViewController = UIViewController()
         profileViewController.view.backgroundColor = UIColor.yellowColor()
         
-        var findPeopleViewController = UIViewController()
-        findPeopleViewController.view.backgroundColor = UIColor.blueColor()
+        var searchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
         
-        
-        
-        var viewControllers = [feedViewController, profileViewController, findPeopleViewController, cameraViewController]
+        var viewControllers = [feedViewController, cameraViewController, profileViewController, searchViewController]
         
         self.setViewControllers(viewControllers, animated: true)
         
@@ -47,7 +43,10 @@ class TabBarController: UITabBarController {
         self.tabBar.translucent = false
         
         // Set the Sign Out Button on the top right corner of the navigation bar and define its function afterwards
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .Done, target: self, action: "didTapSignOut:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .Done, target: self, action: "didTapSignOut:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: .Done, target: self, action: nil)
+        
+        
         
     }
 

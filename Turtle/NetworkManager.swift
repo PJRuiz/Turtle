@@ -88,4 +88,22 @@ public class NetworkManager
             }
         }
     }
+    
+    func findUsers(searchTerm: String!, completionHandler: ObjectsCompletionHandler!)
+    {
+        var query = PFUser.query()
+        
+        //"username is the key for which we're searching"
+        query.whereKey("username", containsString: searchTerm)
+        
+        var descriptor = NSSortDescriptor(key: "username", ascending: false)
+        query.orderBySortDescriptor(descriptor)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            
+            completionHandler(objects: objects, error: error)
+        }
+    }
+    
 }
