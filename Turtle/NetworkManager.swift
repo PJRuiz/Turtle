@@ -12,6 +12,11 @@ typealias ObjectsCompletionHandler = (objects:[AnyObject]?, error: NSError?) -> 
 
 typealias ImageCompletionHandler = (image:UIImage?, error: NSError?) -> ( )
 
+typealias BooleanCompletionHandler = (isFollowing:Bool?, error: NSError?) -> ( )
+
+typealias ErrorCompletionHandler = (error: NSError?) -> ( )
+
+
 
 public class NetworkManager
 {
@@ -106,4 +111,92 @@ public class NetworkManager
         }
     }
     
+    func isFollowing(user: PFUser!, completionHandler: BooleanCompletionHandler!)
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        var query = relation.query()
+        query.whereKey("username", equalTo: user.username)
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            
+            if let constError = error
+            {
+                println("error determining if currentUser follows other user")
+                
+                completionHandler(isFollowing: false, error: error)
+            }
+            else
+            {
+                var isFollowing = objects.count > 0
+                
+                completionHandler(isFollowing:isFollowing, error: nil)
+            }
+        }
+    }
+    
+    func updateFollowValue(value: Bool, user: PFUser!, completionHandler: ErrorCompletionHandler!)
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        
+        if value == true
+        {
+            relation.addObject(user)
+        }
+        else
+        {
+            relation.removeObject(user)
+        }
+        
+        PFUser.currentUser().saveInBackgroundWithBlock {
+            (success, error) -> Void in
+            
+            if error != nil
+            {
+                println("Error following/unfollowing user")
+            }
+            
+            completionHandler(error: error)
+            
+        }
+
+    }
+    
+//    func follow(user: PFUser!, completionHandler: ErrorCompletionHandler! )
+//    {
+//        var relation = PFUser.currentUser().relationForKey("following")
+//        
+//        relation.addObject(user)
+//        PFUser.currentUser().saveInBackgroundWithBlock {
+//            (success, error) -> Void in
+//            if error != nil
+//            {
+//                println("Error following user")
+//            }
+//
+//            completionHandler(error: nil)
+//
+//        }
+//    }
+//    
+//    
+//    func unFollow(user: PFUser!, completionHandler: ErrorCompletionHandler!)
+//    {
+//        var relation = PFUser.currentUser().relationForKey("following")
+//        
+//        relation.removeObject(user)
+//        PFUser.currentUser().saveInBackgroundWithBlock {
+//            (success, error) -> Void in
+//            if error != nil
+//            {
+//                println("Error following user")
+//            }
+//            
+//            completionHandler(error: nil)
+//            
+//        }
+//    }
+    
 }
+
+
+
