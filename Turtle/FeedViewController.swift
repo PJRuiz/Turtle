@@ -10,7 +10,7 @@ import UIKit
 
 class FeedViewController: UIViewController, UITableViewDataSource
 {
-    var items = []
+    var items = ["","","",""]
     @IBOutlet var tableView: UITableView?
     
     
@@ -21,6 +21,18 @@ class FeedViewController: UIViewController, UITableViewDataSource
         tableView?.registerNib(nib, forCellReuseIdentifier: "PostCellIdentifier")
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.sharedInstance.fetchFeed {
+            (objects, error) -> ( ) in
+            
+            println(objects)
+            println(error?)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +50,9 @@ class FeedViewController: UIViewController, UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCellIdentifier") as PostCell
-        var item = items[indexPath.row] as PFObject
-        
-        cell.item = item
+//        var item = items[indexPath.row] as PFObject
+//        
+//        cell.item = item
         return cell
     }
     

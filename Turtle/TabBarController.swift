@@ -13,8 +13,8 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var feedViewController = UIViewController()
-        feedViewController.view.backgroundColor = UIColor.orangeColor()
+        var feedViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
+        //feedViewController.view.backgroundColor = UIColor.orangeColor()
         
         var cameraViewController = UIViewController()
         cameraViewController.view.backgroundColor = UIColor.purpleColor()
@@ -49,18 +49,15 @@ class TabBarController: UITabBarController {
         // Set the Sign Out Button on the top right corner of the navigation bar and define its function afterwards
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .Done, target: self, action: "didTapSignOut:")
         
-        func didTapSignOut(sender: AnyObject)
-        {
-            PFUser.logOut( )
-            
-            
-            // Set view controller back to the Root View Controller we set up before
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        }
-
     }
 
-    
+    func didTapSignOut(sender: AnyObject)
+    {
+        PFUser.logOut()
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         

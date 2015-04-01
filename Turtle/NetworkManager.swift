@@ -34,4 +34,29 @@ public class NetworkManager
         
     }
     
+    func fetchFeed(completionHandler: (objects:[AnyObject]?, error: NSError?) -> ())
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        var query = relation.query()
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
+        
+            if let constError = error
+            {
+                println("error fetching following")
+                completionHandler(objects: nil, error: constError)
+            }
+            else
+            {
+                var postQuery = PFQuery(className: "Post")
+                postQuery.whereKey("User", containedIn: objects)
+                postQuery.orderByDescending("createdAt")
+                postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
+                  
+                    completionHandler(objects: objects, error: error)
+                    
+                })
+            }
+        }
+    }
+    
 }
