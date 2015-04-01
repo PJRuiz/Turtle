@@ -160,42 +160,7 @@ public class NetworkManager
         }
 
     }
-    
-//    func follow(user: PFUser!, completionHandler: ErrorCompletionHandler! )
-//    {
-//        var relation = PFUser.currentUser().relationForKey("following")
-//        
-//        relation.addObject(user)
-//        PFUser.currentUser().saveInBackgroundWithBlock {
-//            (success, error) -> Void in
-//            if error != nil
-//            {
-//                println("Error following user")
-//            }
-//
-//            completionHandler(error: nil)
-//
-//        }
-//    }
-//    
-//    
-//    func unFollow(user: PFUser!, completionHandler: ErrorCompletionHandler!)
-//    {
-//        var relation = PFUser.currentUser().relationForKey("following")
-//        
-//        relation.removeObject(user)
-//        PFUser.currentUser().saveInBackgroundWithBlock {
-//            (success, error) -> Void in
-//            if error != nil
-//            {
-//                println("Error following user")
-//            }
-//            
-//            completionHandler(error: nil)
-//            
-//        }
-//    }
-    
+        
 }
 
 
