@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
         var cameraViewController = UIViewController()
         cameraViewController.view.backgroundColor = UIColor.purpleColor()
         
-        var profileViewController = UIViewController()
+        var profileViewController = ProfileViewController(nibName:"ProfileViewController", bundle: nil)
         profileViewController.view.backgroundColor = UIColor.yellowColor()
         
         var searchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)

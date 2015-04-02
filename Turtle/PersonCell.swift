@@ -92,7 +92,7 @@ class PersonCell: UITableViewCell
         
         var newValue = !(self.isFollowing == true)
 
-        NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user) {
+        NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user!) {
             (error) -> () in
 
             self.followButton?.enabled = true

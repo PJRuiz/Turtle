@@ -18,22 +18,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImages" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-yo-HHG">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-c2-nzo">
-                    <rect key="frame" x="8" y="548" width="584" height="44"/>
-                    <color key="backgroundColor" red="0.22190733000000001" green="1" blue="0.1107470892" alpha="0.5" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="cpj-4x-IFQ"/>
-                    </constraints>
-                    <state key="normal" title="Sign In">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="uyN-vh-vlY"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSw-G7-0na">
-                    <rect key="frame" x="0.0" y="504" width="600" height="44"/>
+                    <rect key="frame" x="20" y="484" width="560" height="44"/>
                     <color key="backgroundColor" red="0.22190733000000001" green="1" blue="0.1107470892" alpha="0.5" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="u5N-5y-k3z"/>
@@ -46,29 +32,51 @@
                         <action selector="didTapSignUp:" destination="-1" eventType="touchUpInside" id="OLc-Qh-clt"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-c2-nzo">
+                    <rect key="frame" x="20" y="548" width="560" height="44"/>
+                    <color key="backgroundColor" red="0.22190733000000001" green="1" blue="0.1107470892" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="cpj-4x-IFQ"/>
+                    </constraints>
+                    <state key="normal" title="Sign In">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="uyN-vh-vlY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="kkt-yo-HHG" secondAttribute="trailing" id="0r7-9T-p3A"/>
                 <constraint firstItem="AdA-c2-nzo" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="49u-6p-kwo"/>
                 <constraint firstItem="kkt-yo-HHG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Kq-g6-C8R"/>
+                <constraint firstItem="AdA-c2-nzo" firstAttribute="top" secondItem="NSw-G7-0na" secondAttribute="bottom" constant="20" id="BaS-aX-ej2"/>
+                <constraint firstAttribute="trailing" secondItem="AdA-c2-nzo" secondAttribute="trailing" constant="20" id="Bub-hq-Aq9"/>
                 <constraint firstItem="AdA-c2-nzo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="-8" id="CLQ-ZR-7eS"/>
-                <constraint firstItem="NSw-G7-0na" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DgS-DK-RnH"/>
+                <constraint firstItem="NSw-G7-0na" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DgS-DK-RnH"/>
                 <constraint firstAttribute="trailingMargin" secondItem="AdA-c2-nzo" secondAttribute="trailing" constant="-8" id="M71-L1-Zgh"/>
                 <constraint firstItem="AdA-c2-nzo" firstAttribute="top" secondItem="NSw-G7-0na" secondAttribute="bottom" id="MPX-Qq-9JE"/>
+                <constraint firstItem="AdA-c2-nzo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="SlS-5C-YtE"/>
                 <constraint firstItem="AdA-c2-nzo" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="byN-oD-9YH"/>
-                <constraint firstAttribute="trailing" secondItem="NSw-G7-0na" secondAttribute="trailing" id="eDL-q8-8sV"/>
+                <constraint firstAttribute="trailing" secondItem="NSw-G7-0na" secondAttribute="trailing" constant="20" id="eDL-q8-8sV"/>
                 <constraint firstItem="AdA-c2-nzo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="fKM-gU-Arw"/>
                 <constraint firstAttribute="bottom" secondItem="kkt-yo-HHG" secondAttribute="bottom" id="hff-Rm-7GE"/>
                 <constraint firstAttribute="trailingMargin" secondItem="AdA-c2-nzo" secondAttribute="trailing" id="kZE-sX-7Aq"/>
                 <constraint firstItem="kkt-yo-HHG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q4I-CF-rEE"/>
                 <constraint firstAttribute="bottom" secondItem="AdA-c2-nzo" secondAttribute="bottom" constant="8" id="usK-eP-pP6"/>
+                <constraint firstAttribute="bottom" secondItem="AdA-c2-nzo" secondAttribute="bottom" constant="8" id="zki-hG-ODi"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="49u-6p-kwo"/>
                     <exclude reference="CLQ-ZR-7eS"/>
                     <exclude reference="M71-L1-Zgh"/>
+                    <exclude reference="MPX-Qq-9JE"/>
+                    <exclude reference="byN-oD-9YH"/>
+                    <exclude reference="fKM-gU-Arw"/>
+                    <exclude reference="kZE-sX-7Aq"/>
                     <exclude reference="usK-eP-pP6"/>
                 </mask>
             </variation>

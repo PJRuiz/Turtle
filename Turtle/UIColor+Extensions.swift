@@ -14,4 +14,10 @@ extension UIColor
     {
         return UIColor(red: 249.0/255, green: 249.0/255, blue: 249.0/255, alpha: 1.0)
     }
+    
+    class func TurtleGreen() -> UIColor
+    {
+        return UIColor(red: 68.0/255, green: 166.0/255, blue: 100.0/255, alpha: 1.0)
+    }
+    
 }

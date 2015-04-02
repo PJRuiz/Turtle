@@ -62,15 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         Parse.setApplicationId("LfU3CRaq7OkNQEtvIseEYYNzuQzdN7KVuQBeU316",
             clientKey: "O8uyf8nz5SFwdq19pv3auLFDLMAM8LKhNAd2eBhp")
-        //        var testObject = PFObject(className: "TestObject")
-        //        testObject["foo"] = "bar"
-        //        testObject.save()
     }
     
     func setupAppAppearance()
     {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().barTintColor = UIColor.TurtleGreen()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UITabBar.appearance().barTintColor = UIColor.blackColor()

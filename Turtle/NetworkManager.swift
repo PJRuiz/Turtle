@@ -134,7 +134,7 @@ public class NetworkManager
         }
     }
     
-    func updateFollowValue(value: Bool, user: PFUser!, completionHandler: ErrorCompletionHandler!)
+    func updateFollowValue(value: Bool, user: PFUser, completionHandler: ErrorCompletionHandler)
     {
         var relation = PFUser.currentUser().relationForKey("following")
         
@@ -150,17 +150,44 @@ public class NetworkManager
         PFUser.currentUser().saveInBackgroundWithBlock {
             (success, error) -> Void in
             
-            if error != nil
+            completionHandler(error: error)
+        }
+    }
+    
+    func fetchPosts(user: PFUser, completionHandler: ObjectsCompletionHandler)
+    {
+        var postQuery = PFQuery(className: "Post")
+        postQuery.whereKey("User", equalTo: user)
+        postQuery.orderByDescending("createdAt")
+        postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
+            
+            completionHandler(objects: objects, error: error)
+            
+        })
+    }
+    
+    func postImage(image: UIImage, completionHandler: ErrorCompletionHandler)
+    {
+        var imageData = UIImagePNGRepresentation(image) // returns NSData
+        var imageFile = PFFile(name: "image.png", data: imageData)
+        
+        var post = PFObject(className: "Post")
+        post["Image"] = imageFile
+        post["User"] = PFUser.currentUser()
+        
+        post.saveInBackgroundWithBlock {
+            (success, error) -> Void in
+            
+            if let constError = error
             {
-                println("Error following/unfollowing user")
+                println("Error uploading post object")
             }
             
             completionHandler(error: error)
-            
         }
-
     }
-        
+
+    
 }
 
 

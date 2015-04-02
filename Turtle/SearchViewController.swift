@@ -21,19 +21,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         var nib = UINib(nibName: "PersonCell", bundle: nil)
         self.tableView?.registerNib(nib, forCellReuseIdentifier: "PersonCellIdentifier")
-        
-        searchBar?.becomeFirstResponder()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar)
     {
+        searchBar.setShowsCancelButton(true, animated: true)
+        self.searchResults = []
+        self.tableView?.reloadData()
+        
         searchBar.setShowsCancelButton(true, animated: true)
     }
     
@@ -59,7 +58,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             
             if let constObjects = objects
             {
-                println(constObjects)
                 self.searchResults = constObjects
                 self.tableView?.reloadData()
             }

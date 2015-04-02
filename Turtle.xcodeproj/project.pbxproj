@@ -13,6 +13,8 @@
 		95500FAD1ACBF3FA00199B57 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */; };
 		95500FB01ACC156200199B57 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FAE1ACC156200199B57 /* PersonCell.swift */; };
 		95500FB11ACC156200199B57 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95500FAF1ACC156200199B57 /* PersonCell.xib */; };
+		95500FB41ACCCB1F00199B57 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FB21ACCCB1F00199B57 /* ProfileViewController.swift */; };
+		95500FB51ACCCB1F00199B57 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95500FB31ACCCB1F00199B57 /* ProfileViewController.xib */; };
 		956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA14E1AC91D7000D64690 /* AppDelegate.swift */; };
 		956BA1561AC91D7000D64690 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1551AC91D7000D64690 /* Images.xcassets */; };
 		956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1571AC91D7000D64690 /* LaunchScreen.xib */; };
@@ -61,6 +63,8 @@
 		95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		95500FAE1ACC156200199B57 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		95500FAF1ACC156200199B57 /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		95500FB21ACCCB1F00199B57 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		95500FB31ACCCB1F00199B57 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		956BA1491AC91D7000D64690 /* Turtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956BA14D1AC91D7000D64690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956BA14E1AC91D7000D64690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				956BA1A31ACB894900D64690 /* FeedViewController.xib */,
 				95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */,
 				95500FAB1ACBF3FA00199B57 /* SearchViewController.xib */,
+				95500FB21ACCCB1F00199B57 /* ProfileViewController.swift */,
+				95500FB31ACCCB1F00199B57 /* ProfileViewController.xib */,
 				956BA19A1ACA347B00D64690 /* TabBarController.swift */,
 				956BA1A61ACB8E9300D64690 /* PostCell.swift */,
 				956BA1A71ACB8E9300D64690 /* PostCell.xib */,
@@ -318,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95500FB51ACCCB1F00199B57 /* ProfileViewController.xib in Resources */,
 				956BA1931AC9218300D64690 /* AuthViewController.xib in Resources */,
 				956BA1A91ACB8E9300D64690 /* PostCell.xib in Resources */,
 				956BA1A51ACB894900D64690 /* FeedViewController.xib in Resources */,
@@ -347,6 +354,7 @@
 				95500FB01ACC156200199B57 /* PersonCell.swift in Sources */,
 				956BA1971AC97C1900D64690 /* String+Extensions.swift in Sources */,
 				956BA14F1AC91D7000D64690 /* AppDelegate.swift in Sources */,
+				95500FB41ACCCB1F00199B57 /* ProfileViewController.swift in Sources */,
 				956BA1991ACA2AFD00D64690 /* UIViewController+Extensions.swift in Sources */,
 				956BA19D1ACA6B7A00D64690 /* NetworkManager.swift in Sources */,
 				956BA19B1ACA347B00D64690 /* TabBarController.swift in Sources */,
