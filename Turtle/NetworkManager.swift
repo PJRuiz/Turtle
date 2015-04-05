@@ -85,7 +85,7 @@ public class NetworkManager
             }
             else
             {
-                println( "we downloaded the image!")
+//                println( "we downloaded the image!")
                 
                 let image = UIImage(data: data)
                 

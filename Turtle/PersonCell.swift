@@ -10,7 +10,9 @@ import UIKit
 
 class PersonCell: UITableViewCell
 {
-    @IBOutlet var followButton: UIButton?
+//    @IBOutlet var followButton: UIButton?
+    
+    @IBOutlet var statusButton: UIButton?
     
     var isFollowing: Bool?
     
@@ -18,7 +20,7 @@ class PersonCell: UITableViewCell
         {
         didSet
         {
-            self.configure()
+            self.configure( )
         }
     }
     
@@ -28,7 +30,7 @@ class PersonCell: UITableViewCell
         
         self.isFollowing = false
         
-        self.followButton?.hidden = true
+        self.statusButton?.hidden = true
     }
     
     override func prepareForReuse()
@@ -37,7 +39,7 @@ class PersonCell: UITableViewCell
         
         self.isFollowing = false
         
-        self.followButton?.hidden = true
+        self.statusButton?.hidden = true
         
         self.textLabel?.text = ""
         
@@ -46,59 +48,59 @@ class PersonCell: UITableViewCell
     
     func configure()
     {
+        println("configure started")
         if let constUser = user
         {
             self.textLabel?.text = constUser.username
             
             //are we following this person?
-            
+            println("Checking if we are following the person")
             NetworkManager.sharedInstance.isFollowing(constUser, completionHandler: {
                 (isFollowing, error) -> () in
                 
                 if let constError = error
                 {
                     // Alert the user, or otherwise modify the UI
+                    println(constError)
                 }
                 else
                 {
+                    println(isFollowing)
                     self.isFollowing = isFollowing
                     
                     if isFollowing == true
                     {
+                        println("We are following")
                         var image = UIImage(named: "UnfollowButton")
-                        self.followButton?.setImage(image, forState: .Normal)
+                        self.statusButton?.setImage(image, forState: .Normal)
                     }
                     else
                     {
                         var image = UIImage(named: "FollowButton")
-                        self.followButton?.setImage(image, forState: .Normal)
+                        self.statusButton?.setImage(image, forState: .Normal)
                     }
-                    
-                    self.followButton?.hidden = false
+                    println("prepare to show button")
+                    self.statusButton?.hidden = false
                 }
             })
             
-            //if so: configure the button to unfollow
-            
-            //else: configure the button to follow
-            
-        }
+                  }
     }
     
     
     @IBAction func didTapFollow(sender: UIButton)
     {
-        self.followButton?.enabled = false
+        self.statusButton?.enabled = false
         
         var newValue = !(self.isFollowing == true)
 
         NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user!) {
             (error) -> () in
 
-            self.followButton?.enabled = true
+            self.statusButton?.enabled = true
             
             var image = (newValue == true) ? UIImage(named: "UnfollowButton") : UIImage(named: "FollowButton")
-            self.followButton?.setImage(image, forState: .Normal)
+            self.statusButton?.setImage(image, forState: .Normal)
             
             self.isFollowing = newValue
         }

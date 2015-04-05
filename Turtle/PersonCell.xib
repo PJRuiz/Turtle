@@ -13,28 +13,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21R-K6-qmd">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-Nv-oVh">
                         <rect key="frame" x="211" y="0.0" width="109" height="57"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="109" id="bXD-70-8bN"/>
-                            <constraint firstAttribute="height" priority="750" constant="57" id="nOB-2W-ATE"/>
+                            <constraint firstAttribute="width" constant="109" id="NP2-xL-Ayp"/>
+                            <constraint firstAttribute="height" constant="57" id="q59-w9-9cK"/>
                         </constraints>
                         <state key="normal" image="FollowButton">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="didTapFollow:" destination="KGk-i7-Jjw" eventType="touchDragInside" id="6Fv-pA-rnj"/>
+                            <action selector="didTapFollow:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r4w-Oj-Cnh"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="21R-K6-qmd" secondAttribute="bottom" id="Qqo-Oe-vzT"/>
-                    <constraint firstItem="21R-K6-qmd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sWA-0D-XOq"/>
-                    <constraint firstAttribute="trailing" secondItem="21R-K6-qmd" secondAttribute="trailing" id="tMB-Ie-MgX"/>
+                    <constraint firstAttribute="bottom" secondItem="jr5-Nv-oVh" secondAttribute="bottom" id="3go-hN-aU7"/>
+                    <constraint firstItem="jr5-Nv-oVh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="web-XA-POt"/>
+                    <constraint firstAttribute="trailing" secondItem="jr5-Nv-oVh" secondAttribute="trailing" id="yNT-HT-R6G"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="followButton" destination="21R-K6-qmd" id="vF5-t9-SzQ"/>
+                <outlet property="statusButton" destination="jr5-Nv-oVh" id="oX6-MR-7pQ"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -112,18 +112,14 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         PFUser.logInWithUsernameInBackground(email, password: password) {
             (user: PFUser!, error: NSError!) -> Void in
             
-            if (user != nil)
+            if let constUser = user
             {
-                
-                // New User follows him/herself
-                    
                 var tabBarController = TabBarController()
                 self.navigationController?.pushViewController(tabBarController, animated: true)
             }
             else
             {
-                var tabBarController = TabBarController()
-                self.navigationController?.pushViewController(tabBarController, animated: true)
+                self.showAlert("Sign in failure, check your credentials and try again.")
             }
         }
     }
@@ -158,6 +154,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 
             else
             {
+               self.showAlert("Sign in Failure")
                 println("sign in failure. (alert the user)")
             }
         }

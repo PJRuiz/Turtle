@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,18 +17,20 @@ class TabBarController: UITabBarController {
         var feedViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
         
         var cameraViewController = UIViewController()
-        cameraViewController.view.backgroundColor = UIColor.purpleColor()
         
-        var profileViewController = ProfileViewController(nibName:"ProfileViewController", bundle: nil)
-        profileViewController.view.backgroundColor = UIColor.yellowColor()
+//        var profileViewController = ProfileViewController(nibName:"ProfileViewController", bundle: nil)
+//        profileViewController.user = PFUser.currentUser()
+//        
         
         var searchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
+//        profileViewController,
         
-        var viewControllers = [feedViewController, cameraViewController, profileViewController, searchViewController]
+        var albumViewController = UIViewController()
+        var viewControllers = [feedViewController, cameraViewController, albumViewController, searchViewController]
         
         self.setViewControllers(viewControllers, animated: true)
-        
-        var imageNames = ["FeedIcon", "CameraIcon", "ProfileIcon", "SearchIcon"]
+//        "ProfileIcon",
+        var imageNames = ["FeedIcon", "CameraIcon", "AlbumIcon", "SearchIcon"]
         
         let tabItems = tabBar.items as [UITabBarItem]
         for (index, value) in enumerate(tabItems)
@@ -42,12 +45,19 @@ class TabBarController: UITabBarController {
         self.navigationItem.hidesBackButton = true
         self.tabBar.translucent = false
         
+        self.delegate = self
+        
         // Set the Sign Out Button on the top right corner of the navigation bar and define its function afterwards
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .Done, target: self, action: "didTapSignOut:")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: .Done, target: self, action: nil)
         
         
         
+    }
+    
+    func didTapSearch(sender:AnyObject)
+    {
+        println("Tapped Search")
     }
 
     func didTapSignOut(sender: AnyObject)
@@ -66,9 +76,83 @@ class TabBarController: UITabBarController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
+    {
+        var cameraViewController = self.viewControllers![1] as UIViewController
+        if viewController == cameraViewController
+        {
+            showCamera()
+            return false
+        }
+        
+        var albumViewController = self.viewControllers![2] as UIViewController
+        if viewController == albumViewController
+        {
+            showAlbum()
+            return false
+        }
+        
+        return true
+    }
+   
+    
+    func showCamera()
+    {
+        
+        // Camera loads the camera, saved photos album loads the camera roll
+        if !UIImagePickerController.isSourceTypeAvailable(.Camera)
+        {
+            self.showAlert("Camera is not available")
+            return
+        }
+        
+        var viewController = UIImagePickerController()
+        viewController.sourceType = .Camera
 
+        viewController.delegate = self
+        
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    {
+        var image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        
+        var targetWidth = UIScreen.mainScreen().scale * UIScreen.mainScreen().bounds.size.width
+        var resizedImage = image.resize(targetWidth)
+        
+        picker.dismissViewControllerAnimated(true, completion: {
+            () -> Void in
+            
+           NetworkManager.sharedInstance.postImage(resizedImage, completionHandler: {
+                (error) -> () in
+                
+                if let constError = error
+                {
+                    self.showAlert(constError.localizedDescription)
+                }
+            })
+            
+        })
+    }
+
+    func showAlbum()
+    {
+        
+        if !UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum)
+        {
+            self.showAlert("Camera is not available")
+            return
+        }
+        
+        var viewController = UIImagePickerController()
+        viewController.sourceType = .SavedPhotosAlbum
+        
+        viewController.delegate = self
+        
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
 
 }
