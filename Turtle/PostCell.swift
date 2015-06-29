@@ -57,7 +57,7 @@ class PostCell: UITableViewCell {
         if let constPost = self.post
         {
             // Set the username label
-            var user = constPost["User"] as PFUser
+            var user = constPost["User"] as! PFUser
             user.fetchIfNeededInBackgroundWithBlock({
                 (object, error) -> Void in
                 
@@ -73,7 +73,7 @@ class PostCell: UITableViewCell {
             // Set the date label
             
             var date = constPost.createdAt
-            self.dateLabel?.text = date.fuzzyTime()
+            self.dateLabel?.text = date!.fuzzyTime()
             
             // Download the image and display it.
             

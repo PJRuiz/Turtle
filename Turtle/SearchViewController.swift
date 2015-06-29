@@ -75,9 +75,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PersonCellIdentifier") as PersonCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PersonCellIdentifier") as! PersonCell
         
-        var user = self.searchResults[indexPath.row] as PFUser
+        var user = self.searchResults[indexPath.row] as! PFUser
         
         cell.user = user
         

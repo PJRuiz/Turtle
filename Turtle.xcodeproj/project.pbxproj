@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951569411AF0A52B007ACDDA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951569401AF0A52B007ACDDA /* Parse.framework */; };
 		95500FA71ACBB5F600199B57 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FA61ACBB5F600199B57 /* NSDate+Extensions.swift */; };
 		95500FA91ACBC00500199B57 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FA81ACBC00500199B57 /* UIColor+Extensions.swift */; };
 		95500FAC1ACBF3FA00199B57 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */; };
@@ -21,7 +22,6 @@
 		956BA1591AC91D7000D64690 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BA1571AC91D7000D64690 /* LaunchScreen.xib */; };
 		956BA1651AC91D7000D64690 /* TurtleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BA1641AC91D7000D64690 /* TurtleTests.swift */; };
 		956BA1701AC91EDE00D64690 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA16E1AC91EDE00D64690 /* Bolts.framework */; };
-		956BA1711AC91EDE00D64690 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA16F1AC91EDE00D64690 /* Parse.framework */; };
 		956BA1731AC91EF200D64690 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1721AC91EF200D64690 /* libz.dylib */; };
 		956BA1751AC91EFC00D64690 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1741AC91EFC00D64690 /* libsqlite3.dylib */; };
 		956BA1771AC91F0700D64690 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BA1761AC91F0700D64690 /* CoreLocation.framework */; };
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		951569401AF0A52B007ACDDA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		95500FA61ACBB5F600199B57 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		95500FA81ACBC00500199B57 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		95500FAA1ACBF3FA00199B57 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		956BA1631AC91D7000D64690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956BA1641AC91D7000D64690 /* TurtleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleTests.swift; sourceTree = "<group>"; };
 		956BA16E1AC91EDE00D64690 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.7.0/Bolts.framework"; sourceTree = "<group>"; };
-		956BA16F1AC91EDE00D64690 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../parse-library-1.7.0/Parse.framework"; sourceTree = "<group>"; };
 		956BA1721AC91EF200D64690 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		956BA1741AC91EFC00D64690 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		956BA1761AC91F0700D64690 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -114,13 +114,13 @@
 				956BA1811AC91F3600D64690 /* MobileCoreServices.framework in Frameworks */,
 				956BA17F1AC91F2B00D64690 /* QuartzCore.framework in Frameworks */,
 				956BA17D1AC91F2200D64690 /* Security.framework in Frameworks */,
+				951569411AF0A52B007ACDDA /* Parse.framework in Frameworks */,
 				956BA17B1AC91F1800D64690 /* StoreKit.framework in Frameworks */,
 				956BA1791AC91F1000D64690 /* CoreGraphics.framework in Frameworks */,
 				956BA1771AC91F0700D64690 /* CoreLocation.framework in Frameworks */,
 				956BA1751AC91EFC00D64690 /* libsqlite3.dylib in Frameworks */,
 				956BA1731AC91EF200D64690 /* libz.dylib in Frameworks */,
 				956BA1701AC91EDE00D64690 /* Bolts.framework in Frameworks */,
-				956BA1711AC91EDE00D64690 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +209,7 @@
 		956BA1881AC91F6900D64690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				951569401AF0A52B007ACDDA /* Parse.framework */,
 				956BA1861AC91F5600D64690 /* SystemConfiguration.framework */,
 				956BA1841AC91F4800D64690 /* AudioToolbox.framework */,
 				956BA1821AC91F3F00D64690 /* CFNetwork.framework */,
@@ -221,7 +222,6 @@
 				956BA1741AC91EFC00D64690 /* libsqlite3.dylib */,
 				956BA1721AC91EF200D64690 /* libz.dylib */,
 				956BA16E1AC91EDE00D64690 /* Bolts.framework */,
-				956BA16F1AC91EDE00D64690 /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,6 +497,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pedroruiz/Desktop/Turtle/parse-library-1.7.0",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Turtle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -518,6 +519,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pedroruiz/Desktop/Turtle/parse-library-1.7.0",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Turtle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;

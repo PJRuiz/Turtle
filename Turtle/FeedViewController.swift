@@ -54,8 +54,8 @@ class FeedViewController: UIViewController, UITableViewDataSource
     // Ready to display an item in a cell for a row in a location within a tableview
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PostCellIdentifier") as PostCell
-        var item = items[indexPath.row] as PFObject
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCellIdentifier") as! PostCell
+        var item = items[indexPath.row] as! PFObject
         
         cell.post = item
         return cell

@@ -32,7 +32,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
 //        "ProfileIcon",
         var imageNames = ["FeedIcon", "CameraIcon", "AlbumIcon", "SearchIcon"]
         
-        let tabItems = tabBar.items as [UITabBarItem]
+        let tabItems = tabBar.items as! [UITabBarItem]
         for (index, value) in enumerate(tabItems)
         {
             var imageName = imageNames[index]
@@ -80,14 +80,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
     {
-        var cameraViewController = self.viewControllers![1] as UIViewController
+        var cameraViewController = self.viewControllers![1] as! UIViewController
         if viewController == cameraViewController
         {
             showCamera()
             return false
         }
         
-        var albumViewController = self.viewControllers![2] as UIViewController
+        var albumViewController = self.viewControllers![2] as! UIViewController
         if viewController == albumViewController
         {
             showAlbum()
@@ -118,7 +118,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     {
-        var image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        var image: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         var targetWidth = UIScreen.mainScreen().scale * UIScreen.mainScreen().bounds.size.width
         var resizedImage = image.resize(targetWidth)

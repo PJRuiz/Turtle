@@ -32,11 +32,11 @@ public class NetworkManager
     
     func follow(user: PFUser!, completionHandler:(error: NSError?) -> ( ) )
     {
-        var relation = PFUser.currentUser().relationForKey("following")
+        var relation = PFUser.currentUser()!.relationForKey("following")
         
         relation.addObject(user)
         
-        PFUser.currentUser().saveInBackgroundWithBlock { (
+        PFUser.currentUser()!.saveInBackgroundWithBlock { (
             success, error) -> Void in
             
             completionHandler(error: error)
@@ -46,33 +46,35 @@ public class NetworkManager
     
     func fetchFeed(completionHandler: ObjectsCompletionHandler!)
     {
-        var relation = PFUser.currentUser().relationForKey("following")
-        var query = relation.query()
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
-        
-            if let constError = error
-            {
-                println("error fetching following")
-                completionHandler(objects: nil, error: constError)
-            }
-            else
-            {
-                var postQuery = PFQuery(className: "Post")
-                postQuery.whereKey("User", containedIn: objects)
-                postQuery.orderByDescending("createdAt")
-                postQuery.findObjectsInBackgroundWithBlock(
-                    { (objects: [AnyObject]!, error: NSError!) -> Void in
-                  
-                        completionHandler(objects: objects, error: error)
-                    
+        var relation = PFUser.currentUser()!.relationForKey("following")
+        if var query = relation.query() {
+            query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                
+                if let constError = error
+                {
+                    println("error fetching following")
+                    completionHandler(objects: nil, error: constError)
+                }
+                else
+                {
+                    var postQuery = PFQuery(className: "Post")
+                    postQuery.whereKey("User", containedIn: objects!)
+                    postQuery.orderByDescending("createdAt")
+                    postQuery.findObjectsInBackgroundWithBlock(
+                        { (objects: [AnyObject]?, error: NSError?) -> Void in
+                            
+                            completionHandler(objects: objects, error: error)
+                            
                     } )
+                }
             }
         }
+        
     }
     
     func fetchImage(post: PFObject!, completionHandler: ImageCompletionHandler!)
     {
-        var imageReference = post["Image"] as PFFile
+        var imageReference = post["Image"]as! PFFile
         
         imageReference.getDataInBackgroundWithBlock {
             (data, error) -> Void in
@@ -87,7 +89,7 @@ public class NetworkManager
             {
 //                println( "we downloaded the image!")
                 
-                let image = UIImage(data: data)
+                let image = UIImage(data: data!)
                 
                 completionHandler(image:image, error: nil)
             }
@@ -99,12 +101,12 @@ public class NetworkManager
         var query = PFUser.query()
         
         //"username is the key for which we're searching"
-        query.whereKey("username", containsString: searchTerm)
+        query!.whereKey("username", containsString: searchTerm)
         
         var descriptor = NSSortDescriptor(key: "username", ascending: false)
-        query.orderBySortDescriptor(descriptor)
+        query!.orderBySortDescriptor(descriptor)
         
-        query.findObjectsInBackgroundWithBlock {
+        query!.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
             
             completionHandler(objects: objects, error: error)
@@ -113,10 +115,10 @@ public class NetworkManager
     
     func isFollowing(user: PFUser!, completionHandler: BooleanCompletionHandler!)
     {
-        var relation = PFUser.currentUser().relationForKey("following")
+        var relation = PFUser.currentUser()!.relationForKey("following")
         var query = relation.query()
-        query.whereKey("username", equalTo: user.username)
-        query.findObjectsInBackgroundWithBlock {
+        query!.whereKey("username", equalTo: user.username!)
+        query!.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
             
             if let constError = error
@@ -127,7 +129,7 @@ public class NetworkManager
             }
             else
             {
-                var isFollowing = objects.count > 0
+                var isFollowing = objects!.count > 0
                 
                 completionHandler(isFollowing:isFollowing, error: nil)
             }
@@ -136,7 +138,7 @@ public class NetworkManager
     
     func updateFollowValue(value: Bool, user: PFUser, completionHandler: ErrorCompletionHandler)
     {
-        var relation = PFUser.currentUser().relationForKey("following")
+        var relation = PFUser.currentUser()!.relationForKey("following")
         
         if value == true
         {
@@ -147,7 +149,7 @@ public class NetworkManager
             relation.removeObject(user)
         }
         
-        PFUser.currentUser().saveInBackgroundWithBlock {
+        PFUser.currentUser()!.saveInBackgroundWithBlock {
             (success, error) -> Void in
             
             completionHandler(error: error)
@@ -159,7 +161,7 @@ public class NetworkManager
         var postQuery = PFQuery(className: "Post")
         postQuery.whereKey("User", equalTo: user)
         postQuery.orderByDescending("createdAt")
-        postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
+        postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
             
             completionHandler(objects: objects, error: error)
             

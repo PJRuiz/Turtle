@@ -107,10 +107,10 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func signIn (email: String, password: String)
+    func signIn (email: String?, password: String?)
     {
-        PFUser.logInWithUsernameInBackground(email, password: password) {
-            (user: PFUser!, error: NSError!) -> Void in
+        PFUser.logInWithUsernameInBackground(email!, password: password!) {
+            (user: PFUser?, error: NSError?) -> Void in
             
             if let constUser = user
             {
@@ -125,7 +125,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func signUp (email: String, password: String)
+    func signUp (email: String?, password: String?)
     {
         var user = PFUser()
         user.username = email
@@ -133,7 +133,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         user.password = password
         
         user.signUpInBackgroundWithBlock {
-            (succeeded: Bool!, error: NSError!) -> Void in
+            (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil
             {

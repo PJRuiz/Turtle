@@ -79,7 +79,6 @@ class PersonCell: UITableViewCell
                         var image = UIImage(named: "FollowButton")
                         self.statusButton?.setImage(image, forState: .Normal)
                     }
-                    println("prepare to show button")
                     self.statusButton?.hidden = false
                 }
             })
